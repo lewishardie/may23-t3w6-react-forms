@@ -14,10 +14,19 @@ export default class BuisnessCardParent extends Component {
     }
 
     updateState = (stateKeyId, newStateValue) => {
-        console.log("from parent " + newStateValue)
-        this.setState({
-            [stateKeyId]: newStateValue
-        })
+        if (Object.keys(this.state).includes(stateKeyId)){
+            if (stateKeyId === "name") {
+                //-- Add name validation here
+            } else if (stateKeyId === "email") {
+                //-- Add email validation here
+            }
+            
+            this.setState({
+                [stateKeyId]: newStateValue
+            })
+        } else {
+            console.warn("Incorrect key for the state")
+        }
     }
 
     render(){

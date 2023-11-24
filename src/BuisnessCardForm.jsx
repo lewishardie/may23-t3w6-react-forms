@@ -2,12 +2,9 @@
 import { Component } from "react";
 
 export default class BusinessCardForm extends Component{
-    constructor(props){
-        super(props);
-    }
 
     handleChangeInput = (event) => {
-        console.log(event.target);
+        // console.log(event.target);
         this.props.updateState(event.target.name, event.target.value);
     }
 
