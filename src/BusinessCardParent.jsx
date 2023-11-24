@@ -29,20 +29,49 @@ export default class BuisnessCardParent extends Component {
         }
     }
 
+    toggleEditMode = () => {
+        this.setState({editMode: !this.state.editMode})
+    }
+
+    // render(){
+    //     if (this.state.editMode) {
+    //         return(
+    //             <div>
+    //                 <BusinessCardForm 
+    //                 name={this.state.name} 
+    //                 email={this.state.email}
+    //                 updateState={this.updateState}
+    //                 />
+    //                 <button onClick={this.toggleEditMode}>Toggle Edit Mode</button>
+    //             </div>
+    //         )
+    //     } else {
+    //         return (
+    //             <div>
+    //             <BuisnessCardDisplay name={this.state.name} email={this.state.email}/>
+    //             <button onClick={this.toggleEditMode}>Toggle Edit Mode</button>
+    //             </div>
+    //         )
+    //     }
+    // }
+
+    //-- Dryer way to write the above code, using ?(trenary (conditional logic, that is the same as and if statement))
     render(){
-        if (this.state.editMode) {
-            return(
-                <BusinessCardForm 
-                    name={this.state.name} 
-                    email={this.state.email}
-                    updateState={this.updateState}
-                />
-            )
-        } else {
-            return (
-                <BuisnessCardDisplay name={this.state.name} email={this.state.email}/>
-            )
-        }
+
+        return(
+            <div>
+                {
+                    this.state.editMode ?
+                        <BusinessCardForm 
+                        name={this.state.name} 
+                        email={this.state.email}
+                        updateState={this.updateState}
+                        />
+                    : <BuisnessCardDisplay name={this.state.name} email={this.state.email}/>
+                }
+                <button onClick={this.toggleEditMode}>Toggle Edit Mode</button>
+            </div>
+        )
     }
 }
 
