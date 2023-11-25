@@ -6,7 +6,7 @@ import ContactPage from './pages/ContactPage';
 import BusinessCardPage from './pages/BusinessCardPage';
 import PokemonFetcherPage from './pages/PokemonFetcherPage';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
 
         Better alternatives available
         */}
-        <Route path='/about' element={<AboutPage />}>
+        <Route path='/about' element={<Outlet />}>
+          <Route index element={<AboutPage />} />
           <Route path='contact' element={<ContactPage />} />
 
         </Route>
