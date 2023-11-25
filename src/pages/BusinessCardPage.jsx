@@ -1,4 +1,4 @@
-import BuisnessCardParent from './BusinessCardParent';
+import BuisnessCardParent from '../components/BusinessCardParent';
 
 export default function BusinessCardPage (){
     return(

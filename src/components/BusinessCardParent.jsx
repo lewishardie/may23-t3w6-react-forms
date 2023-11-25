@@ -33,6 +33,7 @@ export default class BuisnessCardParent extends Component {
         this.setState({editMode: !this.state.editMode})
     }
 
+    //-- Obvious way to display edit mode on or off, using if statement
     // render(){
     //     if (this.state.editMode) {
     //         return(
