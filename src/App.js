@@ -1,5 +1,6 @@
 
 import './App.css';
+import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -12,6 +13,9 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
+      <h1>This is shown in all the pages</h1>
+      <Navbar />
+      
       <Routes>
         <Route path='/' element={<HomePage />} />
         {/* This works, but there can be tedious when there are many nested routes
